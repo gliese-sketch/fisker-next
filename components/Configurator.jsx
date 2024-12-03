@@ -20,7 +20,9 @@ function Configurator() {
             <button
               key={index}
               onClick={() => console.log("Exterior Clicked")}
-              className="hover:scale-105 transition-transform duration-100  border-2 border-blue-950 rounded-full"
+              className={`hover:scale-105 transition-transform duration-100  ${
+                index === 0 ? "border-2 border-blue-300 rounded-full" : ""
+              }`}
             >
               <img
                 src="images/black_pearl.png"
@@ -40,7 +42,9 @@ function Configurator() {
             <button
               key={index}
               onClick={() => console.log("Exterior Clicked")}
-              className="hover:scale-105 transition-transform duration-100"
+              className={`hover:scale-105 transition-transform duration-100  ${
+                index === 0 ? "border-2 border-blue-300 rounded-full" : ""
+              }`}
             >
               <img
                 src="https://fisker-ocean.vercel.app/swatch/interior/dark.png"
@@ -60,7 +64,9 @@ function Configurator() {
             <button
               key={index}
               onClick={() => console.log("Exterior Clicked")}
-              className="hover:scale-105 transition-transform duration-100"
+              className={`hover:scale-105 transition-transform duration-100  ${
+                index === 0 ? "border-2 border-blue-300" : ""
+              }`}
             >
               <img
                 src="https://fisker-ocean.vercel.app/wheels/aerostealth.webp"

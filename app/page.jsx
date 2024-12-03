@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <>
       <Header />
-      <main className="flex flex-col sm:flex-row justify-between md:gap-8 px-2 md:px-8 py-3 md:py-6">
+      <main className="flex flex-col sm:flex-row sm:gap-3 justify-between md:gap-8 px-2 md:px-8 py-3 md:py-6">
         <section className="w-full md:w-3/4">
           <Preview />
         </section>
