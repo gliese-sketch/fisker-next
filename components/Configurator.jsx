@@ -20,7 +20,7 @@ function Configurator() {
             <button
               key={index}
               onClick={() => console.log("Exterior Clicked")}
-              className="hover:scale-105 transition-transform duration-100"
+              className="hover:scale-105 transition-transform duration-100  border-2 border-blue-950 rounded-full"
             >
               <img
                 src="images/black_pearl.png"
