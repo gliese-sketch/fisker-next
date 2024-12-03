@@ -10,7 +10,7 @@ function HomePage() {
         <section className="w-full md:w-3/4">
           <Preview />
         </section>
-        <aside className="w-full md:w-1/4 bg-red-300">
+        <aside className="w-full md:w-1/4">
           <Configurator />
         </aside>
       </main>

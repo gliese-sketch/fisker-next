@@ -27,7 +27,7 @@ function Preview() {
         className="w-full h-auto rounded-lg"
         alt="Aerostealth"
       />
-      <p className="uppercase font-semibold text-stone-900 py-3">
+      <p className="uppercase font-semibold text-blue-950 py-3">
         Interior Image
       </p>
     </>
