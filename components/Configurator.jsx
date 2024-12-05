@@ -1,6 +1,19 @@
 "use client";
 
 function Configurator() {
+  const interiorSwatch = [
+    {
+      id: 0,
+      name: "dark",
+      src: "/swatch/interior/dark.png",
+    },
+    {
+      id: 1,
+      name: "light",
+      src: "/swatch/interior/light.png",
+    },
+  ];
+
   return (
     <div>
       {/* Headings */}
@@ -38,19 +51,15 @@ function Configurator() {
       <div className="my-12">
         <h3 className="font-bold uppercase mb-3">Interior Color</h3>
         <div className="flex gap-2">
-          {new Array(2).fill(1).map((_, index) => (
+          {interiorSwatch.map((color) => (
             <button
-              key={index}
+              key={color.id}
               onClick={() => console.log("Exterior Clicked")}
               className={`hover:scale-105 transition-transform duration-100  ${
-                index === 0 ? "border-2 border-blue-300 rounded-full" : ""
+                color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
               }`}
             >
-              <img
-                src="https://fisker-ocean.vercel.app/swatch/interior/dark.png"
-                alt="Black Pearl"
-                className="w-12"
-              />
+              <img src={color.src} alt="Black Pearl" className="w-12" />
             </button>
           ))}
         </div>
