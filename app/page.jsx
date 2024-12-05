@@ -7,9 +7,9 @@ import Configurator from "@/components/Configurator";
 
 function HomePage() {
   const [activeOptions, setActiveOptions] = useState({
-    color: "Red Planet",
-    interior: "white",
-    wheel: "Vortex",
+    color: "Sun Soaked",
+    interior: "dark",
+    wheel: "AeroStealth",
   });
 
   function updateOptions(option, value) {
@@ -25,7 +25,7 @@ function HomePage() {
           <Preview {...activeOptions} />
         </section>
         <aside className="w-full md:w-1/4">
-          <Configurator updateOptions={updateOptions} />
+          <Configurator updateOptions={updateOptions} {...activeOptions} />
         </aside>
       </main>
     </>

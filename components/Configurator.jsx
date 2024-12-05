@@ -1,4 +1,5 @@
-function Configurator({ updateOptions }) {
+function Configurator({ color, interior, wheel, updateOptions }) {
+  console.log(color, interior, wheel);
   const exteriorSwatch = [
     {
       id: 0,
@@ -78,15 +79,17 @@ function Configurator({ updateOptions }) {
       <div className="my-3">
         <h3 className="font-bold uppercase mb-3">Exterior Color</h3>
         <div className="flex gap-2">
-          {exteriorSwatch.map((color) => (
+          {exteriorSwatch.map((colorObj) => (
             <button
-              key={color.id}
-              onClick={() => updateOptions("color", color.name)}
+              key={colorObj.id}
+              onClick={() => updateOptions("color", colorObj.name)}
               className={`hover:scale-105 transition-transform duration-100  ${
-                color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
+                color === colorObj.name
+                  ? "border-2 border-blue-300 rounded-full"
+                  : ""
               }`}
             >
-              <img src={color.src} alt="Black Pearl" className="w-12" />
+              <img src={colorObj.src} alt="Black Pearl" className="w-12" />
             </button>
           ))}
         </div>
@@ -96,15 +99,17 @@ function Configurator({ updateOptions }) {
       <div className="my-12">
         <h3 className="font-bold uppercase mb-3">Interior Color</h3>
         <div className="flex gap-2">
-          {interiorSwatch.map((color) => (
+          {interiorSwatch.map((colorObj) => (
             <button
-              key={color.id}
-              onClick={() => updateOptions("interior", color.name)}
+              key={colorObj.id}
+              onClick={() => updateOptions("interior", colorObj.name)}
               className={`hover:scale-105 transition-transform duration-100  ${
-                color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
+                colorObj.name === interior
+                  ? "border-2 border-blue-300 rounded-full"
+                  : ""
               }`}
             >
-              <img src={color.src} alt="Black Pearl" className="w-14" />
+              <img src={colorObj.src} alt="Black Pearl" className="w-14" />
             </button>
           ))}
         </div>
@@ -114,15 +119,15 @@ function Configurator({ updateOptions }) {
       <div className="my-3">
         <h3 className="font-bold uppercase mb-3">Wheel Options</h3>
         <div className="flex gap-2">
-          {wheelsOptions.map((wheel) => (
+          {wheelsOptions.map((wheelObj) => (
             <button
-              key={wheel.id}
-              onClick={() => updateOptions("wheel", wheel.name)}
+              key={wheelObj.id}
+              onClick={() => updateOptions("wheel", wheelObj.name)}
               className={`hover:scale-105 transition-transform duration-100  ${
-                wheel.id === 0 ? "border-2 border-blue-300" : ""
+                wheelObj.name === wheel ? "border-2 border-blue-300" : ""
               }`}
             >
-              <img src={wheel.src} alt="Black Pearl" className="w-16" />
+              <img src={wheelObj.src} alt="Black Pearl" className="w-16" />
             </button>
           ))}
         </div>
