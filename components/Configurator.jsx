@@ -14,6 +14,24 @@ function Configurator() {
     },
   ];
 
+  const wheelsOptions = [
+    {
+      id: 0,
+      name: "AeroStealth",
+      src: "/wheels/aerostealth.png",
+    },
+    {
+      id: 1,
+      name: "SlipStream Black",
+      src: "/wheels/slipstream_black.png",
+    },
+    {
+      id: 2,
+      name: "Vortex",
+      src: "/wheels/vortex.png",
+    },
+  ];
+
   return (
     <div>
       {/* Headings */}
@@ -59,7 +77,7 @@ function Configurator() {
                 color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
               }`}
             >
-              <img src={color.src} alt="Black Pearl" className="w-12" />
+              <img src={color.src} alt="Black Pearl" className="w-14" />
             </button>
           ))}
         </div>
@@ -69,19 +87,15 @@ function Configurator() {
       <div className="my-3">
         <h3 className="font-bold uppercase mb-3">Wheel Options</h3>
         <div className="flex gap-2">
-          {new Array(3).fill(1).map((_, index) => (
+          {wheelsOptions.map((wheel) => (
             <button
-              key={index}
+              key={wheel.id}
               onClick={() => console.log("Exterior Clicked")}
               className={`hover:scale-105 transition-transform duration-100  ${
-                index === 0 ? "border-2 border-blue-300" : ""
+                wheel.id === 0 ? "border-2 border-blue-300" : ""
               }`}
             >
-              <img
-                src="https://fisker-ocean.vercel.app/wheels/aerostealth.webp"
-                alt="Black Pearl"
-                className="w-12"
-              />
+              <img src={wheel.src} alt="Black Pearl" className="w-16" />
             </button>
           ))}
         </div>
