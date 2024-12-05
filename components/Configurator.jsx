@@ -1,6 +1,39 @@
 "use client";
 
 function Configurator() {
+  const exteriorSwatch = [
+    {
+      id: 0,
+      name: "Sun Soaked",
+      src: "/swatch/sun_soaked.png",
+    },
+    {
+      id: 1,
+      name: "Sea Grass",
+      src: "/swatch/sea_grass.png",
+    },
+    {
+      id: 2,
+      name: "Black Pearl",
+      src: "/swatch/black_pearl.png",
+    },
+    {
+      id: 3,
+      name: "Red Planet",
+      src: "/swatch/red_planet.png",
+    },
+    {
+      id: 4,
+      name: "Stealth Green",
+      src: "/swatch/stealth_green.png",
+    },
+    {
+      id: 5,
+      name: "Blue Planet",
+      src: "/swatch/blue_planet.png",
+    },
+  ];
+
   const interiorSwatch = [
     {
       id: 0,
@@ -47,19 +80,15 @@ function Configurator() {
       <div className="my-3">
         <h3 className="font-bold uppercase mb-3">Exterior Color</h3>
         <div className="flex gap-2">
-          {new Array(6).fill(1).map((_, index) => (
+          {exteriorSwatch.map((color) => (
             <button
-              key={index}
+              key={color.id}
               onClick={() => console.log("Exterior Clicked")}
               className={`hover:scale-105 transition-transform duration-100  ${
-                index === 0 ? "border-2 border-blue-300 rounded-full" : ""
+                color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
               }`}
             >
-              <img
-                src="images/black_pearl.png"
-                alt="Black Pearl"
-                className="w-12"
-              />
+              <img src={color.src} alt="Black Pearl" className="w-12" />
             </button>
           ))}
         </div>
