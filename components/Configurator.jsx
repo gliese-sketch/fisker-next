@@ -1,6 +1,4 @@
-"use client";
-
-function Configurator() {
+function Configurator({ updateOptions }) {
   const exteriorSwatch = [
     {
       id: 0,
@@ -42,7 +40,7 @@ function Configurator() {
     },
     {
       id: 1,
-      name: "light",
+      name: "white",
       src: "/swatch/interior/light.png",
     },
   ];
@@ -83,7 +81,7 @@ function Configurator() {
           {exteriorSwatch.map((color) => (
             <button
               key={color.id}
-              onClick={() => console.log("Exterior Clicked")}
+              onClick={() => updateOptions("color", color.name)}
               className={`hover:scale-105 transition-transform duration-100  ${
                 color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
               }`}
@@ -101,7 +99,7 @@ function Configurator() {
           {interiorSwatch.map((color) => (
             <button
               key={color.id}
-              onClick={() => console.log("Exterior Clicked")}
+              onClick={() => updateOptions("interior", color.name)}
               className={`hover:scale-105 transition-transform duration-100  ${
                 color.id === 0 ? "border-2 border-blue-300 rounded-full" : ""
               }`}
@@ -119,7 +117,7 @@ function Configurator() {
           {wheelsOptions.map((wheel) => (
             <button
               key={wheel.id}
-              onClick={() => console.log("Exterior Clicked")}
+              onClick={() => updateOptions("wheel", wheel.name)}
               className={`hover:scale-105 transition-transform duration-100  ${
                 wheel.id === 0 ? "border-2 border-blue-300" : ""
               }`}
